@@ -1,0 +1,113 @@
+<<<<<<< HEAD
+{% extends 'layout/navbar.html' %}
+{% block title %} Daftar Buku {% endblock %}
+{% load django_bootstrap5 %} {% bootstrap_css %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+<div class="card-group">
+    <div class="card">
+        <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
+        <div class="card-body">
+            <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
+            <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
+        </div>
+        <div class="card-footer">
+            <p class="card-text"><strong>Penulis: </strong> J.K Rowling</p> 
+            <p class="card-text"><strong>Harga:</strong> Rp150.000</p> 
+            <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
+      </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
+        <div class="card-body">
+            <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
+            <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
+        </div>
+        <div class="card-footer">
+            <p class="card-text"><strong>Penulis: </strong> J.K Rowling</p> 
+            <p class="card-text"><strong>Harga:</strong> Rp150.000</p> 
+            <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
+      </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
+        <div class="card-body">
+            <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
+            <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
+        </div>
+        <div class="card-footer">
+            <p class="card-text"><strong>Penulis: </strong> J.K Rowling</p> 
+            <p class="card-text"><strong>Harga:</strong> Rp150.000</p> 
+            <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
+      </div>
+    </div>
+  </div>
+
+
+
+=======
+{% extends 'layout/navbar.html' %}
+{% block title %} Daftar Buku {% endblock %}
+{% load django_bootstrap5 %} {% bootstrap_css %}
+{% load static %}
+{% block content %}
+<style>
+  
+  .btn-custom {
+    background-color: black;
+    color: white;
+    border: none;
+  }
+  
+  .btn-custom:hover {
+    background-color: orange;
+    color: white;
+  }
+
+</style>
+
+<div class="card-group">
+    <div class="card">
+        <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
+        <div class="card-body">
+            <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
+            <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
+        </div>
+        <div class="card-footer">
+            <p class="card-text"><strong>Penulis: </strong> J.K Rowling</p> 
+            <p class="card-text"><strong>Harga:</strong> Rp150.000</p> 
+            <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
+      </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
+        <div class="card-body">
+            <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
+            <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
+        </div>
+        <div class="card-footer">
+            <p class="card-text"><strong>Penulis: </strong> J.K Rowling</p> 
+            <p class="card-text"><strong>Harga:</strong> Rp150.000</p> 
+            <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
+      </div>
+    </div>
+    <div class="card">
+        <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
+        <div class="card-body">
+            <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
+            <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
+        </div>
+        <div class="card-footer">
+            <p class="card-text"><strong>Penulis: </strong> J.K Rowling</p> 
+            <p class="card-text"><strong>Harga:</strong> Rp150.000</p> 
+            <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
+      </div>
+    </div>
+  </div>
+
+
+
+>>>>>>> 4ba49aabbb0e6db88f230316516cc65a0e4639a3
+  {% endblock %}

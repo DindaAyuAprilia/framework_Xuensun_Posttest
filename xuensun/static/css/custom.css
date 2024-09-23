@@ -1,0 +1,19 @@
+
+.btn-custom {
+background-color: black;
+color: white;
+border: none;
+}
+
+.btn-custom:hover {
+background-color: orange;
+color: white;
+}
+
+.body-custom {
+    background-image: url('../images/bg2.jpg'); /* Gambar background */
+    background-size: auto; /* Gambar sesuai ukuran aslinya */
+    background-repeat: repeat; /* Gambar diulang secara horizontal dan vertikal */
+    background-attachment: scroll; /* Background ikut tergulir saat scroll */
+    background-position: top left; /* Menempatkan gambar di pojok kiri atas */
+}
