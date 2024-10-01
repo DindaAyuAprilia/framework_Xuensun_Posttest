@@ -17,6 +17,9 @@ Dinda Ayu Aprilia
 
 
 
+
+
+
 # Database
 
 ## admin
@@ -47,6 +50,11 @@ Dinda Ayu Aprilia
 ![image](https://github.com/user-attachments/assets/cee00e38-34c0-40e5-8bc8-b687834572bb)
 
 
+
+
+
+
+
 # Admin Django
 
 ## Admin
@@ -74,3 +82,71 @@ Dinda Ayu Aprilia
 ![image](https://github.com/user-attachments/assets/04651d7e-7730-4cd4-8101-4fa899f17530)
 
 
+
+
+
+
+
+
+
+# Penjelasan
+
+## aksi/function custom
+
+def save_model(self, request, obj, form, change):
+       
+        super().save_model(request, obj, form, change)
+
+        akun, created = Akun.objects.get_or_create(
+            email=obj.email,
+            defaults={
+                'password': make_password('123'),
+                'role': Akun.ADMIN,
+            }
+        )
+
+        if not created:
+            # Jika Akun sudah ada, perbarui peran dan password jika diperlukan
+            akun.role = Akun.ADMIN
+            akun.password = make_password('123') 
+
+Ada pada bagian admin dan user dimana setiap membuat admin atau user akan otomatis membuat akun sesuai rolenya dan membuat password otomatis(untuk sementara).
+
+
+
+
+
+## static assets
+Foldernya di dalam aplikasi xue, lalu saya gunakan untuk latar belakang web dan untuk menambahkan foto cover buku
+
+### cutom.css
+.body-custom {
+    background-image: url('../images/bg2.jpg'); /* Gambar background */
+    background-size: auto; /* Gambar sesuai ukuran aslinya */
+    background-repeat: repeat; /* Gambar diulang secara horizontal dan vertikal */
+    background-attachment: scroll; /* Background ikut tergulir saat scroll */
+    background-position: top left; /* Menempatkan gambar di pojok kiri atas */
+}
+
+### detail_buku
+<div class="card mb-3">
+  <div class="text-center">
+    <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top img-fluid" alt="Harry Potter and the Philosopher's Stone" style="max-width: 50%;">
+  </div>
+
+### daftar buku
+<div class="card-group">
+    <div class="card">
+        <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
+        <div class="card-body">
+
+### landingpage
+<div class="card" style="width: 18rem;">
+  <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
+  <div class="card-body">
+    <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
+    <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
+    <p class="card-text"><strong>Harga:</strong> Rp150.000</p>
+    <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
+  </div>
+</div>
