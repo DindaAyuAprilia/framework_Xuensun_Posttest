@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends 'layout/navbar.html' %}
 {% block title %} Homepage {% endblock %}
 {% load django_bootstrap5 %} {% bootstrap_css %}
@@ -28,45 +27,4 @@
   </div>
 </div>
 
-=======
-{% extends 'layout/navbar.html' %}
-{% block title %} Homepage {% endblock %}
-{% load django_bootstrap5 %} {% bootstrap_css %}
-{% load static %}
-{% block content %}
-<style>
-  
-  .btn-custom {
-    background-color: black;
-    color: white;
-    border: none;
-  }
-  
-  .btn-custom:hover {
-    background-color: orange;
-    color: white;
-  }
-</style>
-<div class="card text-center" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);margin-bottom: 20px;">
-  <div style="background-color: black; color: white;" class="card-header">
-    XuenSun
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Toko Buku Online Terfavorit</h5>
-    <p class="card-text">Temukan berbagai buku yang anda inginkan <br> hanya dalam satu website dengan sangat mudah!</p>
-    <a href="{% url 'daftar_buku' %}" class="btn btn-custom">See All Book</a>
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;">
-  <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
-  <div class="card-body">
-    <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
-    <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
-    <p class="card-text"><strong>Harga:</strong> Rp150.000</p>
-    <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
-  </div>
-</div>
-
->>>>>>> 4ba49aabbb0e6db88f230316516cc65a0e4639a3
 {% endblock %}

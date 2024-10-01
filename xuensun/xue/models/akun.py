@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import EmailValidator
 
+
 class Akun(models.Model):
     ADMIN = 1
     USERS = 2
@@ -10,8 +11,8 @@ class Akun(models.Model):
     )
 
     email = models.EmailField(validators=[EmailValidator()], unique=True)
-    password = models.CharField(max_length=128) 
     role = models.IntegerField(choices=ROLE_CHOICES) 
+    password = models.CharField(max_length=128) 
     
     def __str__(self):
         return self.email

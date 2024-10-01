@@ -1,11 +1,6 @@
 from django.db import models
 from xue.models.penulis import Penulis
-
-class Kategori(models.Model):
-    nama = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.nama
+from xue.models.kategori import Kategori
 
 class Buku(models.Model):
     id_buku = models.AutoField(primary_key=True)
