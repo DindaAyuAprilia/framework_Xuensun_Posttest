@@ -7,8 +7,8 @@ Dinda Ayu Aprilia
 )
 
 #Landingpage
-![alt text](![Cuplikan layar 2024-09-16 170528](https://github.com/user-attachments/assets/db303fea-bd3b-4ea6-aa1e-531f8168e5de)
-)
+![image](https://github.com/user-attachments/assets/26877327-5207-438e-a7a7-99169cc755f7)
+
 
 ![alt text](![Cuplikan layar 2024-09-16 170549](https://github.com/user-attachments/assets/e4094ead-bbe8-4d56-a40b-af72c348ae79)
 )
