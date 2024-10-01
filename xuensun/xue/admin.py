@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth.hashers import make_password
-from django.utils.html import format_html  # Import untuk menampilkan HTML
+from django.utils.html import format_html 
 from .models.admin import Admin
 from .models.akun import Akun
 from .models.users import Users
@@ -14,14 +14,13 @@ class AdminAdmin(admin.ModelAdmin):
     search_fields = ('nama_admin', 'email')
 
     def save_model(self, request, obj, form, change):
-        # Simpan objek Admin terlebih dahulu
+       
         super().save_model(request, obj, form, change)
 
-        # Cek apakah Akun dengan email Admin sudah ada
         akun, created = Akun.objects.get_or_create(
             email=obj.email,
             defaults={
-                'password': make_password('123'),  # Ganti dengan password yang sesuai
+                'password': make_password('123'),
                 'role': Akun.ADMIN,
             }
         )
@@ -29,13 +28,12 @@ class AdminAdmin(admin.ModelAdmin):
         if not created:
             # Jika Akun sudah ada, perbarui peran dan password jika diperlukan
             akun.role = Akun.ADMIN
-            akun.password = make_password('default_password')  # Opsional: Hanya jika ingin memperbarui password
-            akun.save()
+            akun.password = make_password('123')  
 
 class UsersAdmin(admin.ModelAdmin):
     list_display = ('id_user', 'nama', 'email', 'nomor_telepon', 'tanggal_lahir', 'alamat', 'foto_thumbnail')
-    search_fields = ('nama', 'email', 'alamat')  # Menambahkan 'alamat' ke dalam pencarian
-
+    search_fields = ('nama', 'email', 'alamat')  
+    
     def save_model(self, request, obj, form, change):
         # Simpan objek Users terlebih dahulu
         super().save_model(request, obj, form, change)
@@ -44,7 +42,7 @@ class UsersAdmin(admin.ModelAdmin):
         akun, created = Akun.objects.get_or_create(
             email=obj.email,
             defaults={
-                'password': make_password('default_password'),  # Ganti dengan password yang sesuai
+                'password': make_password('123'),
                 'role': Akun.USERS,
             }
         )
@@ -52,14 +50,14 @@ class UsersAdmin(admin.ModelAdmin):
         if not created:
             # Jika Akun sudah ada, perbarui peran dan password jika diperlukan
             akun.role = Akun.USERS
-            akun.password = make_password('default_password')  # Opsional: Hanya jika ingin memperbarui password
+            akun.password = make_password('default_password')  
             akun.save()
 
     def foto_thumbnail(self, obj):
         if obj.foto:
             return format_html('<img src="{}" width="50" height="50" style="object-fit: cover; border-radius: 50%;" />', obj.foto.url)
         return '-'
-    foto_thumbnail.short_description = 'Foto'  # Nama kolom di admin
+    foto_thumbnail.short_description = 'Foto' 
 
 class AkunAdmin(admin.ModelAdmin):
     list_display = ('email', 'get_role_display')
@@ -91,7 +89,7 @@ class BukuAdmin(admin.ModelAdmin):
     search_fields = ('judul', 'deskripsi', 'penulis__nama_penulis')
     list_filter = ('kategori', 'penulis')
 
-    filter_horizontal = ('kategori',)  # Menampilkan widget horizontal untuk ManyToManyField
+    filter_horizontal = ('kategori',) 
 
     def kategori_list(self, obj):
         return ", ".join([kategori.nama for kategori in obj.kategori.all()])
