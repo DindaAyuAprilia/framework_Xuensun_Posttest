@@ -86,6 +86,14 @@ Dinda Ayu Aprilia
 
 
 
+# Tabel dan form
+
+## Penulis
+![Uploading Cuplikan layar 2024-10-16 200320.png…]()
+
+
+
+
 
 
 
@@ -129,24 +137,7 @@ Foldernya di dalam aplikasi xue, lalu saya gunakan untuk latar belakang web dan 
 }
 
 ### detail_buku
-<div class="card mb-3">
-  <div class="text-center">
-    <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top img-fluid" alt="Harry Potter and the Philosopher's Stone" style="max-width: 50%;">
-  </div>
 
 ### daftar buku
-<div class="card-group">
-    <div class="card">
-        <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
-        <div class="card-body">
 
 ### landingpage
-<div class="card" style="width: 18rem;">
-  <img src="{% static 'images/harry_potter1.jpg' %}" class="card-img-top" alt="Harry Potter and the Philosopher's Stone">
-  <div class="card-body">
-    <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
-    <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
-    <p class="card-text"><strong>Harga:</strong> Rp150.000</p>
-    <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
-  </div>
-</div>
