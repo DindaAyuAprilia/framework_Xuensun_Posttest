@@ -55,7 +55,7 @@ Dinda Ayu Aprilia
 
 
 
-# Admin Django
+# POSTTEST 3 Admin Django
 
 ## Admin
 ![image](https://github.com/user-attachments/assets/c046ec97-b075-4161-b1f0-898b8c433687)
@@ -86,7 +86,7 @@ Dinda Ayu Aprilia
 
 
 
-# Tabel dan form
+# POSTTEST 4 Tabel dan form
 
 ## Penulis
 ![Cuplikan layar 2024-10-16 200320](https://github.com/user-attachments/assets/a86a0ada-e1d0-4a41-9925-facd6ce422c1)
@@ -108,7 +108,7 @@ Dinda Ayu Aprilia
 
 
 
-# Penjelasan
+# POSTTEST 3 Penjelasan
 
 ## aksi/function custom
 
@@ -130,6 +130,7 @@ def save_model(self, request, obj, form, change):
             akun.password = make_password('123') 
 
 Ada pada bagian admin dan user dimana setiap membuat admin atau user akan otomatis membuat akun sesuai rolenya dan membuat password otomatis(untuk sementara).
+
 
 
 
