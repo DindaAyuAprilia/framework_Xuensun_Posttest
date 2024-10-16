@@ -1,0 +1,20 @@
+{% extends 'layout/navbar.html' %}
+
+{% block title %}Tambah Penulis{% endblock %}
+
+{% load django_bootstrap5 %} 
+{% bootstrap_css %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/custom.css' %}"> 
+<div class="container">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+        <h1>Tambah Penulis</h1>
+        <a href="{% url 'penulis_index' %}" class="btn btn-secondary">Kembali</a>
+    </div>
+
+    <form class="needs-validation" method="POST" enctype="multipart/form-data" novalidate>
+        {% include 'penulis/form.html' %}
+    </form>
+</div>
+{% endblock %}

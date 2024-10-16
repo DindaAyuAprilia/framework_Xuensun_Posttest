@@ -1,0 +1,33 @@
+{% extends 'layout/navbar.html' %}
+
+{% block title %} Ubah Kategori {% endblock %}
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+<div class="container my-4">
+
+    <form class="needs-validation" method="POST" novalidate>
+        {% csrf_token %}
+        <div class="card p-4 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h1 class="text-primary fw-bold">Ubah Kategori: {{ kategori.nama }}</h1>
+                    <a href="{% url 'kategori_index' %}" class="btn btn-outline-secondary">Kembali</a>
+                </div>
+                <h5 class="card-title fw-bold">Form Ubah Kategori</h5>
+                <p class="card-text text-muted">Silakan perbarui informasi kategori di bawah ini.</p>
+                <div class="mb-3">
+                    <label for="nama" class="form-label">Nama Kategori</label>
+                    <input type="text" class="form-control" id="nama" name="nama" value="{{ kategori.nama }}" required>
+                    <div class="invalid-feedback">Nama kategori tidak boleh kosong.</div>
+                </div>
+            </div>
+            <div class="card-footer text-end">
+                <button type="submit" class="btn btn-custom">Simpan Perubahan</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

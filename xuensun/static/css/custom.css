@@ -1,19 +1,63 @@
+/* Menambahkan gaya untuk card */
+.card {
+    border: none; /* Tanpa border */
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Bayangan lebih kuat */
+}
+
+/* Gaya untuk judul kartu */
+.card-title {
+    font-size: 1.5rem; /* Ukuran font lebih besar */
+}
+
+/* Gaya untuk teks deskripsi */
+.card-text {
+    font-size: 1rem; /* Ukuran font deskripsi */
+}
+
+/* Gaya teks */
+.text-muted {
+    color: #6c757d; /* Warna teks muted */
+}
 
 .btn-custom {
-background-color: black;
-color: white;
-border: none;
+    background-color: black; /* Warna latar belakang */
+    color: white; /* Warna teks */
+    border: none; /* Tanpa border */
+    padding: 10px 20px; /* Padding vertikal dan horizontal */
+    border-radius: 5px; /* Sudut melengkung */
+    transition: background-color 0.3s, transform 0.3s; /* Transisi untuk efek hover */
+    font-weight: bold; /* Tebal */
+    text-align: center; /* Rata tengah */
+    text-decoration: none; /* Tanpa garis bawah */
+    display: inline-block; /* Menjadikan elemen inline-block */
 }
 
 .btn-custom:hover {
-background-color: orange;
-color: white;
+    background-color: orange; /* Warna latar belakang saat hover */
+    color: white; /* Warna teks saat hover */
+    transform: translateY(-2px); /* Sedikit mengangkat tombol saat hover */
 }
 
+/* Gaya tombol untuk ukuran kecil */
+.btn-sm-custom {
+    background-color: #ffcc00; /* Warna latar belakang tombol kecil */
+    color: black; /* Warna teks tombol kecil */
+    padding: 5px 10px; /* Padding tombol kecil */
+    border-radius: 3px; /* Sudut melengkung tombol kecil */
+    transition: background-color 0.3s, transform 0.3s; /* Transisi untuk efek hover */
+}
+
+.btn-sm-custom:hover {
+    background-color: #ffd700; /* Warna latar belakang saat hover untuk tombol kecil */
+    transform: translateY(-1px); /* Sedikit mengangkat tombol kecil saat hover */
+}
+
+/* Gaya untuk body */
 .body-custom {
     background-image: url('../images/bg2.jpg'); /* Gambar background */
-    background-size: auto; /* Gambar sesuai ukuran aslinya */
-    background-repeat: repeat; /* Gambar diulang secara horizontal dan vertikal */
-    background-attachment: scroll; /* Background ikut tergulir saat scroll */
-    background-position: top left; /* Menempatkan gambar di pojok kiri atas */
+    background-size: cover; /* Mengatur gambar agar menutupi seluruh area */
+    background-repeat: no-repeat; /* Tidak mengulang gambar */
+    background-attachment: fixed; /* Gambar tetap saat scroll */
+    background-position: center; /* Menempatkan gambar di tengah */
 }

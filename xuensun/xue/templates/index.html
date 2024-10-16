@@ -13,7 +13,7 @@
   <div class="card-body">
     <h5 class="card-title">Toko Buku Online Terfavorit</h5>
     <p class="card-text">Temukan berbagai buku yang anda inginkan <br> hanya dalam satu website dengan sangat mudah!</p>
-    <a href="{% url 'daftar_buku' %}" class="btn btn-custom">See All Book</a>
+    <a href="{% url 'buku_index' %}" class="btn btn-custom">See All Book</a>
   </div>
 </div>
 
@@ -23,7 +23,7 @@
     <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
     <p class="card-text">Harry Potter and the Philosopher's Stone adalah novel fantasi karangan penulis Inggris J. K. Rowling yang merupakan novel pertama dalam seri Harry Potter dan novel debut Rowling. </p>
     <p class="card-text"><strong>Harga:</strong> Rp150.000</p>
-    <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a>
+    {% comment %} <a href="{% url 'detail_buku' %}" class="btn btn-custom">Selengkapnya..</a> {% endcomment %}
   </div>
 </div>
 

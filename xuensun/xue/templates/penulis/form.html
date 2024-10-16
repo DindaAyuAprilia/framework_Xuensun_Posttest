@@ -1,0 +1,30 @@
+{% csrf_token %}
+<!-- Foto Field -->
+<div class="mb-3">
+    <label for="id_foto" class="form-label">Foto</label>
+    <input type="file" class="form-control" id="id_foto" name="foto" value="{{ form.foto.value|default_if_none:'' }}">
+    <div class="invalid-feedback">{{ form.foto.errors }}</div>
+</div>
+
+<!-- Nama Penulis Field -->
+<div class="mb-3">
+    <label for="id_nama_penulis" class="form-label">Nama Penulis</label>
+    <input type="text" class="form-control" id="id_nama_penulis" name="nama_penulis" value="{{ form.nama_penulis.value|default_if_none:'' }}" required>
+    <div class="invalid-feedback">{{ form.nama_penulis.errors }}</div>
+</div>
+
+<!-- Biodata Field -->
+<div class="mb-3">
+    <label for="id_biodata" class="form-label">Biodata</label>
+    <textarea class="form-control" id="id_biodata" name="biodata" rows="4" required>{{ form.biodata.value|default_if_none:'' }}</textarea>
+    <div class="invalid-feedback">{{ form.biodata.errors }}</div>
+</div>
+
+<!-- Tanggal Lahir Field -->
+<div class="mb-3">
+    <label for="id_tanggal_lahir" class="form-label">Tanggal Lahir</label>
+    <input type="date" class="form-control" id="id_tanggal_lahir" name="tanggal_lahir" value="{{ form.tanggal_lahir.value|default_if_none:'' }}" required>
+    <div class="invalid-feedback">{{ form.tanggal_lahir.errors }}</div>
+</div>
+
+<button type="submit" class="btn btn-primary">Simpan</button>

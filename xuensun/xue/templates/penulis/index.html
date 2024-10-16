@@ -1,0 +1,102 @@
+{% extends 'layout/navbar.html' %}
+
+{% block title %} Daftar Penulis {% endblock %}
+{% load django_bootstrap5 %} 
+{% bootstrap_css %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+<div class="container my-4">
+  <h1 class="mb-4">Daftar Penulis</h1>
+  <a href="{% url 'penulis_create' %}" class="btn btn-custom mb-3">Tambah Penulis</a>
+
+  <form method="GET" action="{% url 'penulis_index' %}" class="d-flex mb-4">
+    <input class="form-control me-2" type="search" name="q" placeholder="Cari penulis..." value="{{ query|default:'' }}" aria-label="Search">
+    <button class="btn btn-outline-success btn-custom" type="submit">Cari</button>
+  </form>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+              <th>Foto</th> <!-- Kolom untuk foto -->
+              <th>Nama Penulis</th>
+              <th>Biodata</th>
+              <th>Tanggal Lahir</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for penulis in penulis_list %}
+            <tr>
+              <td>
+                {% if penulis.foto %}  <!-- Pastikan foto ada -->
+                  <img src="{{ penulis.foto.url }}" alt="{{ penulis.nama_penulis }} Foto" style="width: 100px; height: auto;">
+                {% else %}
+                  <span>Tidak ada foto</span>
+                {% endif %}
+              </td>
+              <td>{{ penulis.nama_penulis }}</td>
+              <td>{{ penulis.biodata|truncatewords:20 }}</td>
+              <td>{{ penulis.tanggal_lahir }}</td>
+              <td>
+                <div class="d-flex">
+                    <a href="{% url 'penulis_update' penulis.id_penulis %}" class="btn btn-sm btn-warning btn-sm-custom me-1">Ubah</a>
+                    <button class="btn btn-sm btn-danger btn-sm-custom" onclick="confirmDelete({{ penulis.id_penulis }})">Hapus</button>
+                </div>
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="5" class="text-center">Tidak ada data penulis</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+          
+    </table>
+  </div>
+
+  <script>
+    function confirmDelete(penulisId) {
+      Swal.fire({
+        title: 'Data penulis akan dihapus',
+        text: 'Data tidak akan bisa dikembalikan!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Ya, Hapus!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Mengirim permintaan AJAX untuk menghapus data
+          fetch(`/penulis/delete/${penulisId}/`, {
+            method: 'POST',
+            headers: {
+              'X-CSRFToken': '{{ csrf_token }}'
+            }
+          }).then(response => {
+            if (response.ok) {
+              Swal.fire(
+                'Deleted!',
+                'Data penulis telah dihapus.',
+                'success'
+              ).then(() => {
+                // Muat ulang halaman setelah penghapusan berhasil
+                window.location.reload();
+              });
+            } else {
+              Swal.fire(
+                'Error!',
+                'Terjadi kesalahan saat menghapus data.',
+                'error'
+              );
+            }
+          });
+        }
+      });
+    }
+  </script>
+</div>
+{% endblock %}
