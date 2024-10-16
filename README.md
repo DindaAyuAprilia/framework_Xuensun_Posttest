@@ -89,7 +89,18 @@ Dinda Ayu Aprilia
 # Tabel dan form
 
 ## Penulis
-![Uploading Cuplikan layar 2024-10-16 200320.png…]()
+![Cuplikan layar 2024-10-16 200320](https://github.com/user-attachments/assets/a86a0ada-e1d0-4a41-9925-facd6ce422c1)
+![image](https://github.com/user-attachments/assets/0b9ac611-ad37-48b3-a971-7c4ce75a96c8)
+![image](https://github.com/user-attachments/assets/6beeca96-66d2-448f-a0b1-173e87184b54)
+![image](https://github.com/user-attachments/assets/47475895-24b6-4177-ba27-d52d2abd8246)
+![Cuplikan layar 2024-10-16 201019](https://github.com/user-attachments/assets/e2d59343-3ecc-42c9-96da-268b96b2f4cd)
+
+
+## Kategori
+![Cuplikan layar 2024-10-16 200135](https://github.com/user-attachments/assets/dff8a52b-ea4a-469c-bd86-324dc6c00779)
+![Cuplikan layar 2024-10-16 200159](https://github.com/user-attachments/assets/a78d4064-9d6d-47a8-94fc-e60b89960fdd)
+![Cuplikan layar 2024-10-16 200244](https://github.com/user-attachments/assets/f4259baf-e7ef-4d74-ade2-7bbb93994517)
+![image](https://github.com/user-attachments/assets/daf3fdc6-81a0-41f1-add0-84f29e0ccae1)
 
 
 
